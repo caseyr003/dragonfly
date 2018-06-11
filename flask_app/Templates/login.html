@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Dragon Fly</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+{% extends "main.html" %}
+{% block content %}
 
 <div class="container">
   <h1>OCI Migration App</h1>
-  <p></p> 
+  <p></p>
 
 <form>
   <div class="form-row">
@@ -30,7 +21,7 @@
     <label for="inputAddress">FINGERPRINT</label>
     <input type="text" class="form-control" id="inputfingerprint" placeholder="FINGERPRINT">
   </div>
-  
+
   <div class="form-group col-md-6">
     <h4>API KEY </h4>
             <div class="input-group">
@@ -44,7 +35,7 @@
 </div>
 <div class="form-group">
   <div class="form-row">
-    
+
     <div class="form-group col-md-6">
       <label for="inputState">Region</label>
       <select id="inputRegion" class="form-control">
@@ -54,7 +45,7 @@
         <option>Frankfurt</option>
         <option>London</option>
       </select>
-    
+
   </div>
   </div>
 </div>
@@ -65,8 +56,4 @@
 
 
 </form>
-
-
-
-</body>
-</html>
+{% endblock %}

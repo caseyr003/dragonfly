@@ -21,3 +21,9 @@ venv.bak/
 
 # Testing Script
 test.py
+
+# Logs
+main.py.log
+
+# Cache
+__pycache__
