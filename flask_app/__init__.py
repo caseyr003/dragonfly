@@ -78,5 +78,9 @@ def vsphere_login():
 def select_local():
     return render_template('source_local.html')
 
+@app.route('/select')
+def select_images():
+    return render_template('image_selection.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
