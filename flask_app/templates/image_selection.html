@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+{% block content %}
+<!-- Page Title -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" align="center">
+      <h1 class="page-header">Select Images to Migrate</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container content-container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Image Selection Form -->
+      <form>
+        <!-- Image Selection -->
+        <!-- Eventually needs to be refactored to add images in dynamically -->
+        <!-- Image Check 01 -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <div class="form-check">
+              <input class="form-check-input image-check" type="checkbox" value="" id="testimage0001_check">
+              <label class="form-check-label image-label" for="testimage0001_check">
+                TestImage0001
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Image Check 02 -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <div class="form-check">
+              <input class="form-check-input image-check" type="checkbox" value="" id="testimage0002_check">
+              <label class="form-check-label image-label" for="testimage0002_check">
+                TestImage0002
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Image Check 03 -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <div class="form-check">
+              <input class="form-check-input image-check" type="checkbox" value="" id="testimage0003_check">
+              <label class="form-check-label image-label" for="testimage0003_check">
+                TestImage0003
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Image Check 04 -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <div class="form-check">
+              <input class="form-check-input image-check" type="checkbox" value="" id="testimage0004_check">
+              <label class="form-check-label image-label" for="testimage0004_check">
+                TestImage0004
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Nav Buttons -->
+        <div class="form-row">
+          <!-- Back Button -->
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary back-btn">Back</button>
+          </div>
+          <!-- Next Button -->
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary next-btn">Next</button>
+          </div>
+        </div>
+
+      </form>
+      <!-- End of Form -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}

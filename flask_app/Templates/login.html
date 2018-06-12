@@ -1,72 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Dragon Fly</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-
+{% extends "main.html" %}
+{% block content %}
+<!-- Page Title -->
 <div class="container">
-  <h1>OCI Migration App</h1>
-  <p></p> 
-
-<form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">OCI User ID</label>
-      <input type="email" class="form-control" id="inputuser" placeholder="OCI User ID">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Tenancy ID</label>
-      <input type="password" class="form-control" id="inputtenancy" placeholder="Tenancy">
+  <div class="row">
+    <div class="col-md-12" align="center">
+      <h1 class="page-header">Oracle Cloud Infrastructure Account</h1>
     </div>
   </div>
+</div>
 
-  <div class="form-group col-md-6">
-    <label for="inputAddress">FINGERPRINT</label>
-    <input type="text" class="form-control" id="inputfingerprint" placeholder="FINGERPRINT">
-  </div>
-  
-  <div class="form-group col-md-6">
-    <h4>API KEY </h4>
+<!-- Page Content -->
+<div class="container content-container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- OCI Account Form -->
+      <form>
+        <!-- Job Name Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="job_name">Job Name</label>
+            <input type="text" class="form-control" id="job_name" placeholder="Job Name">
+          </div>
+        </div>
+        <!-- OCI User OCID Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="user_ocid">User OCID</label>
+            <input type="text" class="form-control" id="user_ocid" placeholder="User OCID">
+          </div>
+        </div>
+        <!-- OCI Tenancy OCID Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="tenancy_ocid">Tenancy OCID</label>
+            <input type="text" class="form-control" id="tenancy_ocid" placeholder="Tenancy OCID">
+          </div>
+        </div>
+        <!-- Fingerprint Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="fingerprint">Fingerprint</label>
+            <input type="text" class="form-control" id="fingerprint" placeholder="Fingerprint">
+          </div>
+        </div>
+        <!-- API Key Selection -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="api_key">API Key</label>
             <div class="input-group">
-                <label class="input-group-btn">
-                    <span class="btn btn-primary">
-                        Browse&hellip; <input type="file" style="display: none;" multiple>
-                    </span>
-                </label>
-                <input type="text" class="form-control" readonly>
+              <label class="input-group-btn">
+                <span class="btn btn-primary">
+                  Browse <input type="file" style="display: none;" multiple>
+                </span>
+              </label>
+              <input type="text" class="form-control" readonly>
             </div>
+          </div>
+        </div>
+        <!-- OCI Region Selection -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="region">Region</label>
+            <select id="region" class="form-control">
+              <option selected>Select Region</option>
+              <option>Ashburn</option>
+              <option>Phoenix</option>
+              <option>Frankfurt</option>
+              <option>London</option>
+            </select>
+          </div>
+        </div>
+        <!-- Submit Button -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <button type="submit" class="btn btn-primary submit-btn">Next</button>
+          </div>
+        </div>
+
+      </form>
+      <!-- End of Form -->
+    </div>
+  </div>
 </div>
-<div class="form-group">
-  <div class="form-row">
-    
-    <div class="form-group col-md-6">
-      <label for="inputState">Region</label>
-      <select id="inputRegion" class="form-control">
-        <option selected>Choose...</option>
-        <option>Ashburn</option>
-        <option>Phoenix</option>
-        <option>Frankfurt</option>
-        <option>London</option>
-      </select>
-    
-  </div>
-  </div>
-</div>
-<br><br>
-  <div class="form-group col-md-6">
-   <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
-  </div>
 
-
-</form>
-
-
-
-</body>
-</html>
+{% endblock %}

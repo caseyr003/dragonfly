@@ -5,7 +5,7 @@ Created on June 1, 2018
 @author: Abhiram Ampabathina
 
 June 1 - Created basic flask app. With one route and sqlite data insert.
- 
+
 '''
 
 from flask import Flask, render_template, redirect, url_for, request, g
@@ -14,7 +14,7 @@ import hashlib
 
 app = Flask(__name__)
 
-DATABASE = 'Static/Users.db'
+DATABASE = 'static/Users.db'
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -61,6 +61,26 @@ def login():
 @app.route('/secret')
 def secret():
     return "You have successfully logged in"
+
+@app.route('/source')
+def select_source():
+    return render_template('source.html')
+
+@app.route('/source/ocic')
+def ocic_login():
+    return render_template('source_ocic.html')
+
+@app.route('/source/vsphere')
+def vsphere_login():
+    return render_template('source_vsphere.html')
+
+@app.route('/source/local')
+def select_local():
+    return render_template('source_local.html')
+
+@app.route('/select')
+def select_images():
+    return render_template('image_selection.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

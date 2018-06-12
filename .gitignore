@@ -16,8 +16,20 @@ ENV/
 env.bak/
 venv.bak/
 
+# Virtualenv
+bin/
+include/
+lib/
+pip-selfcheck.json
+
 # PyCharm
 .idea/
 
 # Testing Script
 test.py
+
+# Logs
+main.py.log
+
+# Cache
+__pycache__

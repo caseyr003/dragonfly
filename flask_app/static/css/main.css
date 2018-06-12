@@ -1,0 +1,92 @@
+/*
+Main Hex Colors
+Blue: #027bc7
+Background Grey: #f2f4f5
+Button Grey: #707070
+*/
+
+
+/* Body */
+body {
+  background: #f2f4f5;
+}
+
+.btn-primary {
+  background-color: #027bc7;
+  border-color: #027bc7;
+}
+
+/* Main Header */
+.header-btn-col {
+  padding: 20px;
+}
+
+.header-btn {
+  background-color: #027bc7;
+  border-color: #027bc7;
+  width: 90px;
+  margin-left: 8px;
+}
+
+.header-logo {
+  height: 40px;
+  margin-top: 20px;
+}
+
+
+/* Main Content */
+.page-header {
+  color: #027bc7;
+  border-style: none;
+  font-size: 28px;
+  margin: 20px 0 10px;
+  font-weight: bold;
+}
+
+.content-container {
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 6px 6px 8px 2px rgba(0,0,0,.2);
+}
+
+.submit-btn {
+  width: 100%;
+  font-weight: bold;
+}
+
+.next-btn {
+  width: 100%;
+  font-weight: bold;
+}
+
+.back-btn {
+  width: 100%;
+  font-weight: bold;
+  background-color: #707070;
+  border-color: #707070;
+}
+
+
+/* Source Page */
+.source-btn {
+  width: 100%;
+  margin: 6px 0;
+}
+
+.source-backbtn {
+  width: 100%;
+  font-weight: bold;
+  background-color: #707070;
+  border-color: #707070;
+  margin: 6px 0;
+}
+
+
+/* Image Selection */
+.image-check {
+
+}
+
+.image-label {
+
+}

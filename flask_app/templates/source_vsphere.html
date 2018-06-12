@@ -1,0 +1,57 @@
+{% extends "main.html" %}
+{% block content %}
+<!-- Page Title -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" align="center">
+      <h1 class="page-header">vSphere</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container content-container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- vSphere Account Form -->
+      <form>
+        <!-- IP Address Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="ip_address">vSphere IP Address</label>
+            <input type="text" class="form-control" id="ip_address" placeholder="IP Address">
+          </div>
+        </div>
+        <!-- Username Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="vsphere_username">vSphere Username</label>
+            <input type="text" class="form-control" id="vsphere_username" placeholder="Username">
+          </div>
+        </div>
+        <!-- vSphere Password Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="vsphere_password">vSphere Password</label>
+            <input type="password" class="form-control" id="vsphere_password" placeholder="Password">
+          </div>
+        </div>
+        <!-- Nav Buttons -->
+        <div class="form-row">
+          <!-- Back Button -->
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary back-btn">Back</button>
+          </div>
+          <!-- Next Button -->
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary next-btn">Next</button>
+          </div>
+        </div>
+
+      </form>
+      <!-- End of Form -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}
