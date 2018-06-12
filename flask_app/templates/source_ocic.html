@@ -1,0 +1,78 @@
+{% extends "main.html" %}
+{% block content %}
+<!-- Page Title -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" align="center">
+      <h1 class="page-header">Oracle Cloud Infrastructure Classic</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container content-container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- OCI-C Account Form -->
+      <form>
+        <!-- Tenancy Name Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="tenancy_name">Tenancy Name</label>
+            <input type="text" class="form-control" id="tenancy_name" placeholder="Tenancy Name">
+          </div>
+        </div>
+        <!-- Compute Classic Username Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="compute_username">Compute Classic Username (full path format)</label>
+            <input type="text" class="form-control" id="compute_username" placeholder="Compute Classic Username">
+          </div>
+        </div>
+        <!-- Object Storage Classic Username Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="obj_storage_username">Object Storage Classic Username (full path format)</label>
+            <input type="text" class="form-control" id="obj_storage_username" placeholder="Object Storage Classic Username">
+          </div>
+        </div>
+        <!-- Classic Password Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="classic_password">Classic Password</label>
+            <input type="password" class="form-control" id="classic_password" placeholder="Password">
+          </div>
+        </div>
+        <!-- Storage Region Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="storage_region">Storage Region</label>
+            <input type="text" class="form-control" id="storage_region" placeholder="Storage Region">
+          </div>
+        </div>
+        <!-- API Host URL Input -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="api_host_url">API Host URL</label>
+            <input type="text" class="form-control" id="api_host_url" placeholder="API Host URL">
+          </div>
+        </div>
+        <!-- Nav Buttons -->
+        <div class="form-row">
+          <!-- Back Button -->
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary back-btn">Back</button>
+          </div>
+          <!-- Next Button -->
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary next-btn">Next</button>
+          </div>
+        </div>
+
+      </form>
+      <!-- End of Form -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}

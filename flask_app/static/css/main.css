@@ -59,6 +59,13 @@ body {
   font-weight: bold;
 }
 
+.back-btn {
+  width: 100%;
+  font-weight: bold;
+  background-color: #707070;
+  border-color: #707070;  
+}
+
 
 /* Source Page */
 .source-btn {

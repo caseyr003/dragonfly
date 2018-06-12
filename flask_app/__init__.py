@@ -66,5 +66,9 @@ def secret():
 def select_source():
     return render_template('source.html')
 
+@app.route('/source/ocic')
+def ocic_login():
+    return render_template('source_ocic.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
