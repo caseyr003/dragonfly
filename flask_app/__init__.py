@@ -5,7 +5,7 @@ Created on June 1, 2018
 @author: Abhiram Ampabathina
 
 June 1 - Created basic flask app. With one route and sqlite data insert.
- 
+
 '''
 
 from flask import Flask, render_template, redirect, url_for, request, g
@@ -14,7 +14,7 @@ import hashlib
 
 app = Flask(__name__)
 
-DATABASE = 'Static/Users.db'
+DATABASE = 'static/Users.db'
 
 def get_db():
     db = getattr(g, '_database', None)

@@ -1,0 +1,35 @@
+/*
+Main Hex Colors
+Blue: #027bc7
+Grey: #f2f4f5
+*/
+
+
+/* Body */
+body {
+  background: #f2f4f5;
+}
+
+
+/* Main Header */
+.header-btn-col {
+  padding: 20px;
+}
+
+.header-btn {
+  background-color: #027bc7;
+  border-color: #027bc7;
+  width: 90px;
+  margin-left: 8px;
+}
+
+.header-logo {
+  height: 40px;
+  margin-top: 20px;
+}
+
+
+/* Main Content */
+.page-header {
+  color: #027bc7;
+}
