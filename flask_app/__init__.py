@@ -70,5 +70,9 @@ def select_source():
 def ocic_login():
     return render_template('source_ocic.html')
 
+@app.route('/source/vsphere')
+def vsphere_login():
+    return render_template('source_vsphere.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
