@@ -16,6 +16,12 @@ ENV/
 env.bak/
 venv.bak/
 
+# Virtualenv
+bin/
+include/
+lib/
+pip-selfcheck.json
+
 # PyCharm
 .idea/
 
