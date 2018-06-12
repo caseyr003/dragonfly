@@ -1,0 +1,50 @@
+{% extends "main.html" %}
+{% block content %}
+<!-- Page Title -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" align="center">
+      <h1 class="page-header">Local Files</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container content-container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Local File Form -->
+      <form>
+        <!-- Folder Selection -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="local_folder">Folder Containing Images to Migrate</label>
+            <div class="input-group">
+              <label class="input-group-btn">
+                <span class="btn btn-primary">
+                  Browse <input type="file" style="display: none;" multiple>
+                </span>
+              </label>
+              <input type="text" class="form-control" readonly>
+            </div>
+          </div>
+        </div>
+        <!-- Nav Buttons -->
+        <div class="form-row">
+          <!-- Back Button -->
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary back-btn">Back</button>
+          </div>
+          <!-- Next Button -->
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary next-btn">Next</button>
+          </div>
+        </div>
+
+      </form>
+      <!-- End of Form -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}

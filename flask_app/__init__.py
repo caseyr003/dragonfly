@@ -74,5 +74,9 @@ def ocic_login():
 def vsphere_login():
     return render_template('source_vsphere.html')
 
+@app.route('/source/local')
+def select_local():
+    return render_template('source_local.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
