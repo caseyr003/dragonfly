@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+{% block content %}
+<!-- Page Title -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" align="center">
+      <h1 class="page-header">Migration Source</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="container content-container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- OCI Migration Source Selection -->
+      <!-- Eventually needs to be refactored to add buttons in dynamically -->
+      <!-- OCI-C Button -->
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary source-btn">Oracle Cloud Infrastructure Classic</button>
+        </div>
+      </div>
+      <!-- vSphere Button -->
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary source-btn">vSphere</button>
+        </div>
+      </div>
+      <!-- Local File Button -->
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary source-btn">Local File</button>
+        </div>
+      </div>
+      <!-- Back Button -->
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary source-backbtn">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

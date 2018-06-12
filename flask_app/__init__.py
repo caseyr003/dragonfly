@@ -62,5 +62,9 @@ def login():
 def secret():
     return "You have successfully logged in"
 
+@app.route('/source')
+def select_source():
+    return render_template('source.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

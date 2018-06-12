@@ -1,7 +1,8 @@
 /*
 Main Hex Colors
 Blue: #027bc7
-Grey: #f2f4f5
+Background Grey: #f2f4f5
+Button Grey: #707070
 */
 
 
@@ -51,4 +52,24 @@ body {
 .submit-btn {
   width: 100%;
   font-weight: bold;
+}
+
+.next-btn {
+  width: 100%;
+  font-weight: bold;
+}
+
+
+/* Source Page */
+.source-btn {
+  width: 100%;
+  margin: 6px 0;
+}
+
+.source-backbtn {
+  width: 100%;
+  font-weight: bold;
+  background-color: #707070;
+  border-color: #707070;
+  margin: 6px 0;
 }
