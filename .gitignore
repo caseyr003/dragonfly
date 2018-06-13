@@ -25,8 +25,9 @@ pip-selfcheck.json
 # PyCharm
 .idea/
 
-# Testing Script
+# Testing Scripts
 test.py
+test2.py
 
 # Logs
 main.py.log
