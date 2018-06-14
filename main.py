@@ -13,7 +13,7 @@ import logging
 from flask import Flask, render_template, redirect, url_for, request, g
 import sqlite3
 import hashlib
-
+import migration
 app = Flask(__name__)
 
 __version__ = '0.1'
@@ -82,11 +82,12 @@ def login():
     error = None
     if request.method == 'POST':
         # Validate here before we insert into sqllite3.
+        
+        # validation_done = migration.authenticate(request.POST['user_ocid'], request.POST['tenancy_ocid'], request.POST['fingerprint'], request.POST['region'], request.POST[''])
         # if validation_done is True:
-        # then insert_OCI_USERS(username,fingerprint,api_key_path,region,tenancy)
+        #     migration.insert_OCI_USERS(username,fingerprint,api_key_path,region,tenancy)
         # else:
-        # then send back the same page with error
-        # return (basic.html,error=error)
+        #     return (basic.html, error=error)
         completion = False
         if completion ==False:
             error = 'Invalid Credentials. Please try again.'
