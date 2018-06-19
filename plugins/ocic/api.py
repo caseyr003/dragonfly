@@ -60,7 +60,7 @@ class ClassicAPI(object):
         # logger.debug('request: ' +str(request_data.url) + ' <'+str(request.status_code) + '> ')
 
         if request.status_code == requests.codes.unauthorized: # pylint: disable=no-member
-            self._session = self._authenticate()
+            self._session, code, status_msg = self.authenticate()
 
             session = self._session
 
@@ -85,12 +85,15 @@ class ClassicAPI(object):
 
         method = 'GET'
         request = self._call(method, path)
-        items = request.json()['result']
+        if 'result' in request.json():
+            items = request.json()['result']
+        else:
+            return 1, "Failed to retrieve list"
 
         for item in items:
             items_list.append(item)
 
-        return items_list
+        return 0, items_list
 
     def authenticate(self):
         """ Perform authentication and retrieve the cookie """
@@ -100,17 +103,21 @@ class ClassicAPI(object):
         try:
             self._session = requests.Session()
             request = self._session.post(self._url(path), json=self.auth_data, headers=self.headers)
-            status = "Success"
+            status_msg = "Authentication successful"
+            code = 0
+
         except (ConnectTimeout, HTTPError, ReadTimeout, Timeout, ConnectionError) as error:
-            status = error
+            status_msg = "Authentication failed." + error
+            code = 1
             # socket error import
         if request.status_code == requests.codes.unauthorized: # pylint: disable=no-member
-            status = "Authentication failed. Incorrect username/password"
+            status_msg = "Authentication failed. Incorrect username/password"
+            code = 2
 
-        return status
+        return self._session, code, status_msg
 
     def list_instances(self):
         """ LIST instances in the container """
         path = '/instance/Compute-'+str(self.tenant)+'/'
-        data = self._list(path)
-        return data
+        code, data = self._list(path)
+        return code, data
