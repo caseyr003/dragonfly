@@ -46,7 +46,7 @@ class OCIC(BasePlugin):
     def list(self):
         # returns a list of instances with their details.
         # obj represents the object with instance details in the following manner
-        # obj = { {'name': 'instance1', 'size' = '', } , {'name': 'instance2', 'size':''}   }
+        # obj = { {'name': 'instance1', 'size' = '', id: '' } , {'name': 'instance2', 'size':'', id: ''}   }
         # rc = 0 - Success
         #       1 - General Failure
         #       3 - Socket error
@@ -54,15 +54,17 @@ class OCIC(BasePlugin):
         # Set API if none exists
         if self.api == None:
             code, status_msg = self.authenticate()
-        if code != 0:
-            return code, status_msg, []
+            if code != 0:
+                return code, status_msg, []
 
         code, instances = self.api.list_instances()
         data = []
         if code == 0:
             for instance in instances:
-                details = {'name': instance["label"], 'id': instance["name"]}
-                data.append(details)
+                code, status_msg, boot_disk = self.api.get_boot_volume(instance["name"])
+                if code == 0:
+                    details = {'name': instance["label"], 'size': boot_disk["size"], 'id': boot_disk["name"]}
+                    data.append(details)
 
         return code, "Instance list retrieved successfully", data
 
