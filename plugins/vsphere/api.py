@@ -15,6 +15,23 @@ import time
 class VSphereAPI(object):
     """
     vSphere API Class
+    """'''
+Created on June 14, 2018
+
+@author: caseyr003
+'''
+from pyVim.connect import SmartConnect, Disconnect
+import atexit
+from pyVmomi import vim
+from pyVim.connect import SmartConnectNoSSL
+import pyVmomi
+import threading
+import time
+
+
+class VSphereAPI(object):
+    """
+    vSphere API Class
     """
 
     def __init__(self, host, user, password):
@@ -58,7 +75,6 @@ class VSphereAPI(object):
 
         try:
             si = self.establish_connection()
-            #TODO: create a persistent connection object. Close connection on program close.
             atexit.register(Disconnect, si)
             content = si.RetrieveContent()
             root_folder = content.rootFolder
@@ -79,18 +95,27 @@ class VSphereAPI(object):
         except pyVmomi.VmomiSupport.InvalidLogin:
             print("The login information entered is invalid.")
 
-    def export(self):
+    def export(self, uuid):
         try:
             si = self.establish_connection()
+            service_content = si.RetrieveContent()
             atexit.register(Disconnect, si)
+            vm = service_content.searchIndex.FindByUuid(None, uuid, True, True)
+
+            if not vm:
+                print("VM with the uuid {} was not found or does not exist.".format(uuid))
+                return
+            else:
+                print("VM found.")
+
             cookie = si._stub.cookie
             cookie = self.process_cookie(cookie)
             print("the value of cookie is: ", cookie)
 
         except Exception as ex:
             print(ex.message)
-            return
 
+    #This class calls the Lease Progress Updater on a thread to comply with Vmware's API
     class ProgressUpdater(threading.Thread):
         def __init__(self, vm_lease, update_time):
             super().__init__(self)
@@ -116,9 +141,12 @@ class VSphereAPI(object):
 
 def main():
     c = VSphereAPI("192.168.253.252", "administrator@vsphere.local", "Oracle:1234@")
-    c.export()
+    #c.enumerate()
+    c.export("5002f189-47f8-809f-33aa-6bb6d64880fc")
     return 0
 
-#TODO: Remove main for testing when function is completed
+
 if __name__ == "__main__":
     main()
+
+
